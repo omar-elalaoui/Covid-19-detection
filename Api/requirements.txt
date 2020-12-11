@@ -1,0 +1,8 @@
+Flask
+Flask-Cors
+Jinja2
+tensorflow
+Keras
+Pillow
+gunicorn
+certifi

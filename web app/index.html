@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>X-ray Covid Predicter</title>
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="style/style.css">
+<link rel="icon" href="img/favicon.png" type="image/gif" sizes="16x16">
+<script src="https://kit.fontawesome.com/72afb0aa86.js" crossorigin="anonymous"></script>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2 col-12">
+                <div class="logo">
+                    <img src="img/logo.png" alt="logo" width="150px" height="35px">
+                </div>
+            </div>
+            <div class="col-md-7 col-12">
+                <div class="header title">X-ray Based Covid19 Detection</div>
+            </div>
+            <div class="col-md-3 col-12">
+                <div class="header by">Realized by: Omar El Alaoui</div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-4">
+        <div class="row">
+
+            <div class="col-md-5 col-12 sec1 mt-4">
+                <div class="upload-btn-wrapper">
+                    <button class="btn btn-secondary">Upload Image. . . <i class="fa fa-upload"></i></button>
+                    <input id="image-selector" type="file" name="myfile" />
+                </div>
+                <!--<div class="my-2">
+                    <i>Or test with these:</i> <br>
+                    <span class="img_test"><img class="img_test_item" src="img/normal1.jpeg" alt=""></span>
+                    <span class="img_test"><img class="img_test_item" src="img/covid1.png" alt=""></span>
+                    <span class="img_test"><img class="img_test_item" src="img/normal2.jpeg" alt=""></span>
+                    <span class="img_test"><img class="img_test_item" src="img/covid2.jpg" alt=""></span>
+                </div>-->
+                <div class="ray my-2">
+                    <span class="lds-dual-ring" style="display: none"></span>
+                    <img style="width: 250px; height: 250px; display: none" id="selected-image" src="x-ray.png" />
+                </div>
+                <div class="pred">
+                    <button class="btn btn-success" id="predict">Predict <i class="fa fa-search"></i></button>
+                </div>
+            </div>
+            <div class="col-md-7 col-12 sec2 mt-3 tabb">
+                <div class="marg d-none d-sm-block"></div>
+                <table class="table table-bordered table-sm">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th colspan="2">Categories</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Model</th>
+                            <td style="background-color: lightgray;">Positive</td>
+                            <td style="background-color: lightgray;">Negative</td>
+                        </tr>
+                        <tr>
+                            <td style="background-color: lightgray;">Inception V3</td>
+                            <td class="incV3_pos"><button class="btn btn-sm btn-danger"></button></td>
+                            <td class="incV3_neg"><button class="btn btn-sm btn-success"></button></td>
+                        </tr>
+                        <tr>
+                            <td style="background-color: lightgray;">ResNet 50</td>
+                            <td class="resNet50_pos"><button class="btn btn-sm btn-danger"></button></td>
+                            <td class="resNet50_neg"><button class="btn btn-sm btn-success"></button></td>
+                        </tr>
+                        <tr>
+                            <td style="background-color: lightgray;">VGG16</td>
+                            <td class="VGG16_pos"><button class="btn btn-sm btn-danger"></button></td>
+                            <td class="VGG16_neg"><button class="btn btn-sm btn-success"></button></td>
+                        </tr>
+                        <tr>
+                            <td style="background-color: lightgray;">DanseNet201</td>
+                            <td class="danseNet201_pos"><button class="btn btn-sm btn-danger"></button></td>
+                            <td class="danseNet201_neg"><button class="btn btn-sm btn-success"></button></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+
+
+</body>
+
+</html>
